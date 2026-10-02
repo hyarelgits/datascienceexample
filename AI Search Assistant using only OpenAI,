@@ -98,3 +98,87 @@ while True:
     print()
 
 
+------------------------
+
+
+
+ollama
+
+
+import requests
+
+query = input("Ask a question: ")
+
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={
+        "model": "llama3",
+        "prompt": query,
+        "stream": False
+    }
+)
+
+data = response.json()
+
+print("\nAI Answer:\n")
+print(data["response"])
+
+
+pip3 install requests
+
+
+ollama serve
+
+
+
+python3 openaimodetest.py
+
+Ask a question:
+How Terraform works?
+
+----------  
+
+install
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+ollama --version
+
+
+
+ollama pull llama3
+
+
+ollama pull mistral
+
+
+ollama pull gemma2
+
+
+-------------------
+
+ollama run llama3
+
+
+
+import requests
+
+query = input("Ask a question: ")
+
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={
+        "model": "llama3",
+        "prompt": query,
+        "stream": False
+    }
+)
+
+data = response.json()
+
+print("\nAI Answer:\n")
+print(data["response"])
+
+
+
