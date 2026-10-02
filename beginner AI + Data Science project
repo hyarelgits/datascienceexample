@@ -520,7 +520,7 @@ import numpy as np
 import statistics
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-
+#pip3 install scikit-learn  check all modules installed or not 
 
 # =====================================
 # STEP 1 : CREATE DATASET
