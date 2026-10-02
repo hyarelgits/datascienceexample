@@ -179,6 +179,29 @@ data = response.json()
 
 print("\nAI Answer:\n")
 print(data["response"])
+-----------------------
+
+import requests
+
+query = input("Ask a question: ")
+
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={
+        "model": "llama3",
+        "prompt": query,
+        "stream": False
+    }
+)
+
+data = response.json()
+
+if "response" in data:
+    print("\nAI Answer:\n")
+    print(data["response"])
+else:
+    print("\nError:")
+    print(data)
 
 
 
