@@ -1,0 +1,46 @@
+Shopping Purchase Prediction AI Model
+
+
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+data = {
+    "Age": [22, 25, 47, 52, 46, 56, 23, 27, 30, 35],
+    "Salary": [25000, 30000, 80000, 90000, 75000, 95000, 27000, 32000, 40000, 50000],
+    "Purchased": [0, 0, 1, 1, 1, 1, 0, 0, 1, 1]
+}
+
+df = pd.DataFrame(data)
+
+X = df[["Age", "Salary"]]
+y = df["Purchased"]
+
+model = LogisticRegression()
+model.fit(X, y)
+
+age = 40
+salary = 70000
+
+prediction = model.predict([[age, salary]])
+
+probability = model.predict_proba([[age, salary]])
+
+print("Customer Age:", age)
+print("Salary:", salary)
+
+if prediction[0] == 1:
+    print("Prediction: Customer Will Buy")
+else:
+    print("Prediction: Customer Will Not Buy")
+
+print("Probability:", probability)
+
+
+
+plt.scatter(df["Age"], df["Salary"], c=df["Purchased"])
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.title("Shopping Purchase Data")
+plt.show()
+
+
