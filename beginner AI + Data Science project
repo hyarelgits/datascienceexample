@@ -1,0 +1,738 @@
+beginner AI + Data Science project
+
+
+
+✅ Python
+ ✅ NumPy
+ ✅ Pandas
+ ✅ Statistics
+ ✅ Probability
+ ✅ Matrix Operations
+ ✅ Matplotlib
+ ✅ AI Concepts (prediction preparation)
+
+
+
+Project: Student Performance Analyzer
+Problem Statement
+
+A school wants to analyze student marks and answer:
+
+Average marks?
+Highest and lowest marks?
+Probability of passing?
+Variance and Standard Deviation?
+Matrix operations on marks?
+Visualize marks using charts?
+Prepare data for AI/ML?
+
+
+
+
+Step 1: Install Libraries
+
+
+pip3 install numpy pandas matplotlib
+
+
+
+Step 2: Create Dataset
+
+.py
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Student": ["A", "B", "C", "D", "E"],
+    "Math": [80, 70, 90, 60, 50],
+    "Science": [85, 65, 92, 58, 55]
+})
+
+print(df)
+
+
+
+------------
+
+
+
+Output:
+
+
+  Student Math Science
+0 A       80   85
+1 B       70   65
+2 C       90   92
+3 D       60   58
+4 E       50   55
+`
+
+------------
+
+
+
+Step 3: Pandas Usage
+Calculate Total Marks
+
+
+df["Total"] = df["Math"] + df["Science"]
+
+print(df)
+
+
+
+Why Pandas?
+
+
+Store Data
+Filter Data
+Analyze Data
+Read Excel/CSV
+
+
+-------------
+
+
+
+Step 4: Statistics
+
+
+
+
+import statistics
+
+print("Mean:", statistics.mean(df["Total"]))
+print("Median:", statistics.median(df["Total"]))
+print("Max:", max(df["Total"]))
+print("Min:", min(df["Total"]))
+
+
+Calculation
+
+
+Totals:
+
+165
+135
+182
+118
+105
+
+
+
+Mean:
+141
+
+Median:
+135
+
+----------------
+
+
+
+Step 5: NumPy Usage
+
+import numpy as np
+
+print("Variance:", np.var(df["Total"]))
+print("Std Dev:", np.std(df["Total"]))
+
+
+Why NumPy?
+
+
+Fast Calculations
+Arrays
+Matrix
+AI/ML Calculations
+``
+
+
+Step 6: Probability
+
+Passing marks:
+
+
+120
+
+Find students passing:
+
+
+passing = len(df[df["Total"] >= 120])
+
+total = len(df)
+
+probability = passing / total
+
+print("Pass Probability:", probability)
+
+
+
+Calculation:
+
+
+Pass = 3
+
+Total = 5
+
+Probability = 3/5
+
+= 0.6
+
+
+
+Output:
+
+0.6
+
+
+Meaning:
+
+60% chance that a student passes
+
+
+
+---------------------
+
+
+
+
+Step 7: Matrix Operations
+
+AI and ML use matrices everywhere.
+
+Create Matrix:
+
+
+import numpy as np
+
+marks_matrix = np.array([
+    [80,85],
+    [70,65],
+    [90,92],
+    [60,58],
+    [50,55]
+])
+
+print(marks_matrix)
+``
+
+Matrix:
+
+
+[[80 85]
+ [70 65]
+ [90 92]
+ [60 58]
+ [50 55]]
+
+
+
+Matrix Shape
+
+
+print(marks_matrix.shape)
+
+
+Output:
+
+
+(5,2)
+
+
+Meaning:
+
+5 rows
+2 columns
+
+
+Matrix Sum
+
+print(np.sum(marks_matrix))
+
+
+Output:
+
+705
+
+
+
+Matrix Mean
+
+
+Matrix Mean
+
+
+print(np.mean(marks_matrix))
+
+
+70.5
+
+
+
+--------------------
+
+
+
+Step 8: Matplotlib Visualization
+Bar Chart
+
+
+import matplotlib.pyplot as plt
+
+plt.bar(df["Student"], df["Total"])
+
+plt.title("Student Total Marks")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+
+plt.show()
+
+
+
+Output:
+
+
+Bar Chart
+
+
+Histogram
+
+
+plt.hist(df["Total"])
+
+plt.title("Marks Distribution")
+
+plt.show()
+
+
+op
+Distribution of Marks
+--------------------------------------
+
+
+
+
+
+Step 9: AI Concept
+
+AI learns from features.
+
+Features:
+
+
+
+X = df[["Math","Science"]]
+
+
+Target:
+
+
+y = df["Total"]
+
+
+
+Output:
+
+
+X
+
+Math Science
+
+80 85
+70 65
+90 92
+60 58
+50 55
+
+
+
+
+AI uses:
+
+
+X → Input
+
+y → Output
+
+
+--------------
+
+
+
+
+Step 10: Simple AI Model
+
+Install:
+
+pip3 install scikit-learn
+
+
+
+from sklearn.linear_model import LinearRegression
+
+X = df[["Math","Science"]]
+
+y = df["Total"]
+
+model = LinearRegression()
+
+model.fit(X,y)
+
+prediction = model.predict([[75,80]])
+
+print(prediction)
+
+
+
+Output:
+
+
+155
+
+
+
+Meaning:
+
+
+If Math=75
+Science=80
+
+Expected Total≈155
+
+
+-------------
+
+
+Complete Flow Diagram
+
+
+
+Student Data
+      │
+      ▼
+    Pandas
+(Store Data)
+      │
+      ▼
+ Statistics
+(Mean, Median)
+      │
+      ▼
+    NumPy
+(Arrays, Matrix)
+      │
+      ▼
+ Probability
+(Pass/Fail Chance)
+      │
+      ▼
+ Matplotlib
+(Graphs)
+      │
+      ▼
+ Machine Learning
+(Linear Regression)
+      │
+      ▼
+ Prediction
+
+------------------
+
+
+
+
+How Each Topic Is Used
+Pandas
+Plain Text
+Store and manage student data
+
+
+NumPy
+Plain Text
+Arrays and matrix calculations
+
+
+Statistics
+Plain Text
+Mean
+Median
+Variance
+Std Deviation
+
+
+Probability
+Plain Text
+Chance of passing exam
+
+
+Matrix
+Plain Text
+AI data representation
+Show more lines
+Matplotlib
+Plain Text
+Visualize marks and trends
+
+
+
+
+
+AI
+Plain Text
+Predict future marks
+
+
+Real World Mapping
+
+
+Student Project       Company Project
+
+Marks          ---> Sales
+Students       ---> Customers
+Pass Probability ---> Sales Success Rate
+Matrix          ---> Training Data
+Graphs          ---> Dashboard
+AI Prediction   ---> Revenue Forecast
+
+
+
+
+
+---------------------------
+
+
+Complete Project Code
+
+
+student_ai_project.py
+
+
+
+# =====================================
+# STUDENT PERFORMANCE ANALYZER PROJECT
+# =====================================
+
+# Import Libraries
+
+import pandas as pd
+import numpy as np
+import statistics
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+
+# =====================================
+# STEP 1 : CREATE DATASET
+# =====================================
+
+print("\n===== STUDENT DATA =====\n")
+
+df = pd.DataFrame({
+    "Student": ["A", "B", "C", "D", "E"],
+    "Math": [80, 70, 90, 60, 50],
+    "Science": [85, 65, 92, 58, 55]
+})
+
+print(df)
+
+
+# =====================================
+# STEP 2 : PANDAS OPERATIONS
+# =====================================
+
+print("\n===== PANDAS ANALYSIS =====\n")
+
+df["Total"] = df["Math"] + df["Science"]
+
+df["Average"] = df["Total"] / 2
+
+print(df)
+
+
+# =====================================
+# STEP 3 : STATISTICS
+# =====================================
+
+print("\n===== STATISTICS =====\n")
+
+print("Mean      :", statistics.mean(df["Total"]))
+print("Median    :", statistics.median(df["Total"]))
+print("Maximum   :", max(df["Total"]))
+print("Minimum   :", min(df["Total"]))
+
+
+# =====================================
+# STEP 4 : NUMPY OPERATIONS
+# =====================================
+
+print("\n===== NUMPY ANALYSIS =====\n")
+
+print("Variance  :", np.var(df["Total"]))
+print("Std Dev   :", np.std(df["Total"]))
+print("Mean      :", np.mean(df["Total"]))
+print("Sum       :", np.sum(df["Total"]))
+
+
+# =====================================
+# STEP 5 : PROBABILITY
+# =====================================
+
+print("\n===== PROBABILITY =====\n")
+
+# Total >= 120 is Pass
+
+passing_students = len(df[df["Total"] >= 120])
+
+total_students = len(df)
+
+pass_probability = passing_students / total_students
+
+print("Passing Students :", passing_students)
+print("Total Students   :", total_students)
+print("Pass Probability :", pass_probability)
+
+print("Pass Percentage  :", pass_probability * 100, "%")
+
+
+# =====================================
+# STEP 6 : MATRIX OPERATIONS
+# =====================================
+
+print("\n===== MATRIX OPERATIONS =====\n")
+
+marks_matrix = np.array([
+    [80, 85],
+    [70, 65],
+    [90, 92],
+    [60, 58],
+    [50, 55]
+])
+
+print("Matrix:\n")
+print(marks_matrix)
+
+print("\nShape :", marks_matrix.shape)
+
+print("Rows :", marks_matrix.shape[0])
+
+print("Columns :", marks_matrix.shape[1])
+
+print("Matrix Sum :", np.sum(marks_matrix))
+
+print("Matrix Mean :", np.mean(marks_matrix))
+
+
+# =====================================
+# STEP 7 : AI MODEL
+# =====================================
+
+print("\n===== AI MODEL =====\n")
+
+X = df[["Math", "Science"]]
+
+y = df["Total"]
+
+model = LinearRegression()
+
+model.fit(X, y)
+
+prediction = model.predict([[75, 80]])
+
+print("Predicted Total Marks for")
+print("Math = 75")
+print("Science = 80")
+
+print("Prediction =", prediction[0])
+
+
+# =====================================
+# STEP 8 : BAR CHART
+# =====================================
+
+plt.figure(figsize=(8,5))
+
+plt.bar(df["Student"], df["Total"])
+
+plt.title("Student Total Marks")
+
+plt.xlabel("Students")
+
+plt.ylabel("Total Marks")
+
+plt.savefig("student_bar_chart.png")
+
+print("\nBar Chart Saved: student_bar_chart.png")
+
+
+# =====================================
+# STEP 9 : HISTOGRAM
+# =====================================
+
+plt.figure(figsize=(8,5))
+
+plt.hist(df["Total"], bins=5)
+
+plt.title("Marks Distribution")
+
+plt.xlabel("Marks")
+
+plt.ylabel("Students")
+
+plt.savefig("marks_histogram.png")
+
+print("Histogram Saved: marks_histogram.png")
+
+
+# =====================================
+# STEP 10 : SCATTER PLOT
+# =====================================
+
+plt.figure(figsize=(8,5))
+
+plt.scatter(df["Math"], df["Science"])
+
+plt.title("Math vs Science")
+
+plt.xlabel("Math")
+
+plt.ylabel("Science")
+
+plt.savefig("scatter_plot.png")
+
+print("Scatter Plot Saved: scatter_plot.png")
+
+
+print("\n===== PROJECT COMPLETED SUCCESSFULLY =====")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
