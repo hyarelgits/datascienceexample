@@ -1,0 +1,103 @@
+AI Search Assistant using only OpenAI,
+
+
+
+Install OpenAI SDK
+
+
+pip install openai
+
+
+Set API Key
+
+
+export OPENAI_API_KEY="your_api_key"
+
+
+Check:
+
+echo $OPENAI_API_KEY
+
+
+Simple OpenAI Search Assistant
+
+.py
+
+
+
+from openai import OpenAI
+
+client = OpenAI()
+
+query = input("Ask a question: ")
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {
+            "role": "system",
+            "content": "You are a helpful AI assistant."
+        },
+        {
+            "role": "user",
+            "content": query
+        }
+    ]
+)
+
+print("\nAI Answer:\n")
+print(response.choices[0].message.content)
+
+
+----------------
+
+
+
+Example
+
+Input:
+
+
+Ask a question:
+What is Kubernetes?
+
+Output:
+
+Kubernetes is an open-source container orchestration platform used to automate deployment, scaling, and management of containers.
+
+
+
+----------
+
+
+Interactive AI Chatbot
+
+
+from openai import OpenAI
+
+client = OpenAI()
+
+print("AI Assistant Started")
+print("Type 'exit' to quit\n")
+
+while True:
+
+    query = input("You: ")
+
+    if query.lower() == "exit":
+        break
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "user", "content": query}
+        ]
+    )
+
+    print("\nAI:", response.choices[0].message.content)
+    print()
+
+
+
+
+
